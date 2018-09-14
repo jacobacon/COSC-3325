@@ -1,11 +1,17 @@
+
+
 def encrypt( key, message ):
-    newMessage = ''.join(chr(ord(letter) + int(key)) for letter in message)
-    fileObject = open('ciphertext.txt', 'w')
+    fixedKey = int(key)%26
+    newMessage = ''.join(chr(ord(letter) + int(fixedKey)) for letter in message)
+    fileObject = open('ciphertext.txt', 'w+')
     fileObject.write(newMessage)
     print(newMessage)
 
 def decrypt( key, message ):
-    newMessage = ''.join(chr(ord(letter) - int(key)) for letter in message)
+    fixedKey = int(key)%26
+    newMessage = ''.join(chr(ord(letter) - int(fixedKey)) for letter in message)
+    fileObject = open('plaintext.txt', 'w+')
+    fileObject.write(newMessage)
     print(newMessage)
 
 def breakMessage( message ):
@@ -15,9 +21,11 @@ def breakMessage( message ):
       key += 1
       newMessage = ''.join(chr(ord(letter) - int(key)) for letter in message)
       print(newMessage + ' generated using key: ' + str(key))
-      input = raw_input("Is this a valid message? (y/n)")
+      input = raw_input("Is this a valid message? (y/n) ")
       if(input.lower() == "y"):
         print("The key is: " + str(key))
+        fileObject = open('plaintext.txt', 'w+')
+        fileObject.write(newMessage)
         found = True
       else:
         found = False
@@ -41,7 +49,7 @@ while ans:
       fileName = raw_input("What File Do You Want to Decrypt? ")
       fileObject = open(fileName, 'r')
       fileContents = fileObject.read()
-      key = raw_input("What's The Key You Want to Use?")
+      key = raw_input("What's The Key You Want to Use? ")
       decrypt( key, fileContents )
     elif ans=="3":
       fileName = raw_input("What File Do You Want to Try to Break? ")
