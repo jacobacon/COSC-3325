@@ -1,5 +1,3 @@
-
-
 def encrypt( key, message ):
     fixedKey = int(key)%26
     newMessage = ''.join(chr(ord(letter) + int(fixedKey)) for letter in message)
@@ -21,7 +19,7 @@ def breakMessage( message ):
       key += 1
       newMessage = ''.join(chr(ord(letter) - int(key)) for letter in message)
       print(newMessage + ' generated using key: ' + str(key))
-      input = raw_input("Is this a valid message? (y/n) ")
+      input = input("Is this a valid message? (y/n) ")
       if(input.lower() == "y"):
         print("The key is: " + str(key))
         fileObject = open('plaintext.txt', 'w+')
@@ -38,21 +36,21 @@ while ans:
     3. Break
     4. Exit
     """)
-    ans=raw_input("What would you like to do? ")
+    ans=input("What would you like to do? ")
     if ans=="1": 
-      fileName = raw_input("What File Do You Want to Encrypt? ")
+      fileName = input("What File Do You Want to Encrypt? ")
       fileObject = open(fileName, "r")
       fileContents = fileObject.read()
-      key = raw_input("What's The Key You Want to Use? ")
+      key = input("What's The Key You Want to Use? ")
       encrypt( key, fileContents )
     elif ans=="2":
-      fileName = raw_input("What File Do You Want to Decrypt? ")
+      fileName = input("What File Do You Want to Decrypt? ")
       fileObject = open(fileName, 'r')
       fileContents = fileObject.read()
-      key = raw_input("What's The Key You Want to Use? ")
+      key = input("What's The Key You Want to Use? ")
       decrypt( key, fileContents )
     elif ans=="3":
-      fileName = raw_input("What File Do You Want to Try to Break? ")
+      fileName = input("What File Do You Want to Try to Break? ")
       fileObject = open(fileName, 'r')
       fileContents = fileObject.read()
       breakMessage(fileContents)
