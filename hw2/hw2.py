@@ -80,4 +80,5 @@ while ans:
         print("The Encrypted Message is: " + enc_msg)
         print("The Decrypted Message is: " + rc4(enc_msg, key))
     elif ans == "3":
+        print("Good Bye")
         break
