@@ -1,5 +1,7 @@
 # One Time Pad Encrypt / Decrypt Function
 def one_time_pad(message, key):
+    assert(len(message) == len(key)), "Ken and Message Must be The Same Length"
+
     # Append empty string with the char of the ord of each letter in the message
     # XOR with the ord of each letter in the key.
     new_message = ''.join(chr(ord(letter_msg) ^ ord(letter_key)) for letter_msg, letter_key in zip(message, key))
@@ -8,6 +10,8 @@ def one_time_pad(message, key):
 
 # RC4 Encrypt / Decrypt Function
 def rc4(message, key):
+    assert(len(key) >= 1), "Key Length Must Be At Least One"
+
     # Setup variables
     keystream = ""
     S = []
