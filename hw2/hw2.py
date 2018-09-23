@@ -75,10 +75,13 @@ while ans:
         message = input("What Message Do You Want to Encrypt (RC4)? ")
         key = input("What Key Do You Want to Use? ")
 
-        enc_msg = rc4(message, key)
-        print("The Original Message is: " + message)
-        print("The Encrypted Message is: " + enc_msg)
-        print("The Decrypted Message is: " + rc4(enc_msg, key))
+        if len(key) < 1:
+            print("Key Must Be At Least 1 Character Long")
+        else:
+            enc_msg = rc4(message, key)
+            print("The Original Message is: " + message)
+            print("The Encrypted Message is: " + enc_msg)
+            print("The Decrypted Message is: " + rc4(enc_msg, key))
     elif ans == "3":
         print("Good Bye")
         break
