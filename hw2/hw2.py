@@ -29,7 +29,7 @@ def rc4(message, key):
         S[i] = S[j]
         S[j] = temp
 
-    # Reset Variables
+    # Reset Variables to reuse them.
     i = 0
     j = 0
 
@@ -68,6 +68,7 @@ while ans:
             break
         else:
             enc_msg = one_time_pad(message, key)
+            print("The Original Message is: " + message)
             print("The Encrypted Message is: " + enc_msg)
             print("The Decrypted Message is: " + one_time_pad(enc_msg, key))
     elif ans == "2":
@@ -75,7 +76,8 @@ while ans:
         key = input("What Key Do You Want to Use? ")
 
         enc_msg = rc4(message, key)
-        print("The Encoded Message is: " + enc_msg)
-        print("The Decoded Message is: " + rc4(enc_msg, key))
+        print("The Original Message is: " + message)
+        print("The Encrypted Message is: " + enc_msg)
+        print("The Decrypted Message is: " + rc4(enc_msg, key))
     elif ans == "3":
         break
