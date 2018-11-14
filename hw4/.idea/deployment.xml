@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Create">
+    <serverData>
+      <paths name="Create">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/security/hw4" local="$PROJECT_DIR$" web="/security/hw4" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/securimage" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

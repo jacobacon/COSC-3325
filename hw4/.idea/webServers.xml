@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="34c1d0e1-d849-46a3-bbe7-c7cdd710f33c" name="Create" url="http://ftp.jbeneski.create.stedwards.edu">
+        <fileTransfer host="ftp.jbeneski.create.stedwards.edu" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
